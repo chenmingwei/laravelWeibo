@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="container">
-    <div class="row signup-box">
+    <div class="row margin-top30px">
       <div class="offset-md-3 col-md-6">
 
         @include('shared._errors')
