@@ -2,7 +2,6 @@
 @section('title', '注册')
 
 @section('content')
-  <div class="container">
     <div class="row margin-top30px">
       <div class="offset-md-3 col-md-6">
 
@@ -42,5 +41,4 @@
 
       </div>
     </div>
-  </div>
 @stop

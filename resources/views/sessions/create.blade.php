@@ -2,14 +2,11 @@
 @section('title', '登陆')
 
 @section('content')
-  <div class="container margin-top30px">
     <div class="row">
       <div class="offset-md-3 col-md-6">
         @include('shared._errors')
       </div>
     </div>
-  </div>
-  <div class="container margin-top30px">
     <div class="row">
       <div class="offset-md-3 col-md-6">
         <div class="card ">
@@ -44,6 +41,5 @@
         </div>
       </div>
     </div>
-  </div>
 
 @stop

@@ -3,11 +3,7 @@
 
 @section('content')
 
-  <div class="container margin-top30px">
     @include('shared._errors')
-  </div>
-
-  <div class="container">
     <div class="offset-md-2 col-md-8">
       <div class="card ">
         <div class="card-header">
@@ -50,6 +46,5 @@
         </div>
       </div>
     </div>
-  </div>
 
 @stop
