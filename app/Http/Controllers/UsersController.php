@@ -18,6 +18,10 @@ class UsersController extends Controller
         ]);
     }
 
+    /**
+     * 用户列表
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $users = User::paginate(10);
@@ -100,6 +104,20 @@ class UsersController extends Controller
         $user->update($data);
         session()->flash('success', '个人资料更新成功');
         return redirect()->route('users.show', $user->id);
+    }
+
+    /**
+     * 删除用户方法
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function destroy(User $user)
+    {
+        $this->authorize('destroy', $user);
+        $user->delete();
+        session()->flash('success', '成功删除用户!');
+        return back();
     }
 
 }

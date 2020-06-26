@@ -19,8 +19,26 @@ class UserPolicy
         //
     }
 
+    /**
+     * 更新用户权限策略
+     * @param User $currentUser
+     * @param User $user
+     * @return bool
+     */
     public function update(User $currentUser, User $user)
     {
         return $currentUser->id === $user->id;
     }
+
+    /**
+     * 删除用户权限策略
+     * @param User $currentUser
+     * @param User $user
+     * @return bool
+     */
+    public function destroy(User $currentUser, User $user)
+    {
+        return $currentUser->is_admin && $currentUser->id !== $user->id;
+    }
+
 }
