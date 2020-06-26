@@ -11,7 +11,7 @@
 <body>
 @include('layouts/_header')
 
-<div class="container">
+<div class="container margin-top30px">
 @include('shared._messages')
 </div>
 
@@ -20,6 +20,6 @@
 <div class="container">
   @include('layouts/_footer')
 </div>
-
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
