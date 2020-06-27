@@ -13,7 +13,7 @@ class CreateStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stauses', function (Blueprint $table) {
+        Schema::create('statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->text('content');
             $table->integer('user_id')->index();

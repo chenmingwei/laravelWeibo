@@ -45,7 +45,10 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $statuses = $user->statuses()
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return view('users.show', compact('user','statuses'));
     }
 
     /**
@@ -88,7 +91,7 @@ class UsersController extends Controller
 //            $message->from($from, $name)->to($to)->subject($subject);
 //        });
 
-        Mail::send($view, $data, function($message) use ($to, $subject){
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
             $message->to($to)->subject($subject);
         });
 
@@ -153,7 +156,7 @@ class UsersController extends Controller
 
         Auth::login($user);
         session()->flash('success', '恭喜你，激活成功!');
-        return redirect()->route('users.show',[$user]);
+        return redirect()->route('users.show', [$user]);
 
     }
 
