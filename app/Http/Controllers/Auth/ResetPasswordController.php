@@ -27,7 +27,9 @@ class ResetPasswordController extends Controller
      * @var string
      */
 //    protected $redirectTo = RouteServiceProvider::HOME;
-
+// pop3/smtp  wyfkfjgkjklhbigf
+// imap/smtp  aqxbedvwbnlcbijj
+// Exchange   hwvlrzxrnbvobjic
     protected $redirectTo = '/';
     public function __construct()
     {
